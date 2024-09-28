@@ -280,6 +280,37 @@ Transform:
   m_Father: {fileID: 5229731031051826267}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7407780346800094620
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8069561481387887956}
+  m_Layer: 0
+  m_Name: groundcheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8069561481387887956
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7407780346800094620}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.813, y: -0.413, z: -1.036}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5229731031051826267}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7839114696077710454
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,7 +321,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5229731031051826267}
   - component: {fileID: 4598054664060038508}
-  - component: {fileID: 2244409241931013829}
+  - component: {fileID: -45672245185063773}
+  - component: {fileID: 8156216913273386984}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -313,6 +345,7 @@ Transform:
   - {fileID: 6246124339590262751}
   - {fileID: 2038326575091140208}
   - {fileID: 7873538087944750252}
+  - {fileID: 8069561481387887956}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -341,9 +374,9 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 0
+  m_Constraints: 4
   m_CollisionDetection: 1
---- !u!114 &2244409241931013829
+--- !u!114 &-45672245185063773
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -355,5 +388,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40e84dfafe69dcc4f86a245e2b59f99e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 25
-  orientation: {fileID: 7873538087944750252}
+  speed: 5
+  jumpRaycastDistance: 2
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  jumpHeight: 15
+  groundCheck: {fileID: 8069561481387887956}
+  jumpForce: 10
+  cameraMovement: {fileID: 4354441562788110174}
+--- !u!114 &8156216913273386984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7839114696077710454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 65ad4f38a4cbf6b4ca7b6877acd4dd0f, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: PlayerMovement
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
