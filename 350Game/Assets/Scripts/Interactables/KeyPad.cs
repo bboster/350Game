@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBehavior : MonoBehaviour
+public class KeyPad : Interactable
 {
+    [SerializeField]
+    private GameObject door;
+    private bool doorOpen;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +17,10 @@ public class PlayerBehavior : MonoBehaviour
     void Update()
     {
         
+    }
+
+    protected override void Interact()
+    {
+        Destroy(door);
     }
 }
