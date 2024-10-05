@@ -5,6 +5,8 @@ using UnityEngine;
 // this class is ABSTRACT so others can interhit from it
 public abstract class Interactable : MonoBehaviour
 {
+    // add or remove an InteractionEvent component to this gameobject
+    public bool useEvents;
     // display message to player
     public string message;
 
