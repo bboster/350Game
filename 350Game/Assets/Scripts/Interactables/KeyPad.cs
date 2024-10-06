@@ -1,12 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class KeyPad : Interactable
 {
     [SerializeField]
     private GameObject door;
     private bool doorOpen;
+
+    [SerializeField]
+    private string transitionScene;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +27,6 @@ public class KeyPad : Interactable
 
     protected override void Interact()
     {
-        Destroy(door);
+        SceneManager.LoadScene(transitionScene);
     }
 }
