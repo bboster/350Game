@@ -2904,6 +2904,8 @@ MonoBehaviour:
   message: Room0
   door: {fileID: 0}
   transitionScene: Room0
+  sceneNumber: 1
+  gameManager: {fileID: 0}
 --- !u!1001 &1538592432
 PrefabInstance:
   m_ObjectHideFlags: 0

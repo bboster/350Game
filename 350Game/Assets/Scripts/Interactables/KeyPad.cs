@@ -14,13 +14,28 @@ public class KeyPad : Interactable
     private string transitionScene;
 
     [SerializeField]
+    private int sceneNumber;
+
+    [SerializeField]
     private GameManager gameManager;
+
 
     // Start is called before the first frame update
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-        gameManager.triedDoorOne = true;
+        if(sceneNumber == 1)
+        {
+            gameManager.triedDoorOne = true;
+        }
+        else if(sceneNumber == 2)
+        {
+            gameManager.triedDoorTwo = true;
+        }
+        else if(sceneNumber == 3)
+        {
+            gameManager.triedDoorThree = true;
+        }
     }
 
     // Update is called once per frame
