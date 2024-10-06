@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class GameManager : MonoBehaviour
         Application.targetFrameRate = 60;
         DontDestroyOnLoad(gameObject);
 
-        doorOne = GameObject.FindGameObjectWithTag("DoorOne");
+        
     }
     // Start is called before the first frame update
     void Start()
@@ -34,9 +35,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(triedDoorOne == true)
+        doorOne = GameObject.FindGameObjectWithTag("DoorOne");
+        if (triedDoorOne == true)
         {
-            doorOne.SetActive(false);
+            Destroy(doorOne);
         }
     }
 }

@@ -19,6 +19,5 @@ public class Doors : Interactable
     protected override void Interact()
     {
         SceneManager.LoadScene(transitionScene);
-        gameManager.triedDoorOne = true;
     }
 }

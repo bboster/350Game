@@ -13,10 +13,14 @@ public class KeyPad : Interactable
     [SerializeField]
     private string transitionScene;
 
+    [SerializeField]
+    private GameManager gameManager;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        gameManager.triedDoorOne = true;
     }
 
     // Update is called once per frame

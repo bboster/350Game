@@ -131,6 +131,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 281132436585998495, guid: 6f4ec8328374c8a4ab8a780caa353471, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 454.625
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053103790128167980, guid: 6f4ec8328374c8a4ab8a780caa353471, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 465.625
+      objectReference: {fileID: 0}
+    - target: {fileID: 2544013793253787298, guid: 6f4ec8328374c8a4ab8a780caa353471, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 465.625
+      objectReference: {fileID: 0}
     - target: {fileID: 3548685740126015755, guid: 6f4ec8328374c8a4ab8a780caa353471, type: 3}
       propertyPath: m_Name
       value: PlayerUI
@@ -2782,8 +2794,8 @@ GameObject:
   - component: {fileID: 1480217835}
   - component: {fileID: 1480217834}
   - component: {fileID: 1480217833}
-  - component: {fileID: 1480217837}
-  m_Layer: 0
+  - component: {fileID: 1480217838}
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2876,7 +2888,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1480217837
+--- !u!114 &1480217838
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2885,11 +2897,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1480217832}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d593d72a0b8efc489c50de217f78c05, type: 3}
+  m_Script: {fileID: 11500000, guid: b310534deb7d47b4e95e4bfae5e0dbe8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   useEvents: 0
   message: Room0
+  door: {fileID: 0}
   transitionScene: Room0
 --- !u!1001 &1538592432
 PrefabInstance:
