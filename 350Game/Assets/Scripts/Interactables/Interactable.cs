@@ -13,6 +13,10 @@ public abstract class Interactable : MonoBehaviour
     // template method pattern
     public void BaseInteract()
     {
+        if (useEvents)
+        {
+            GetComponent<InteractionEvent>().OnInteract.Invoke();
+        }
         Interact();
     }
     protected virtual void Interact()

@@ -38,12 +38,6 @@ public class KeyPad : Interactable
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     protected override void Interact()
     {
         SceneManager.LoadScene(transitionScene);
