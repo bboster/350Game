@@ -10,6 +10,8 @@ public class EnemyAi : MonoBehaviour
     [SerializeField]
     private Transform player;
     [SerializeField]
+    private GameObject p;
+    [SerializeField]
     private float speed;
 
     [SerializeField]
@@ -30,6 +32,7 @@ public class EnemyAi : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>(); 
         anim = GetComponent<Animator>();
+        p = GameObject.Find("Player");
     }
 
     // Update is called once per frame
@@ -56,6 +59,7 @@ public class EnemyAi : MonoBehaviour
             transform.position += transform.forward * speed * Time.deltaTime;
         } else if (canAttack) {
             anim.SetTrigger("Attack");
+            p.GetComponent<PlayerHealth>().TakeDamage(attackStrength);
             canAttack = false;
             attackResetting = false;
         }
