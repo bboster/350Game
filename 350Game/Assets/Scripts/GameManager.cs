@@ -56,5 +56,34 @@ public class GameManager : MonoBehaviour
         {
             Destroy(doorThree);
         }
+
+        if(triedDoorOne == true && triedDoorTwo == true && triedDoorThree == true && SceneManager.GetActiveScene().name == "Room0")
+        {
+            SceneManager.LoadScene("EndGame");
+        }
+
+        if(SceneManager.GetActiveScene().name == "EndGame")
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene("Room0");
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("Quit game");
+        Application.Quit();
+    }
+
+    public void ReturnToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+
 }
