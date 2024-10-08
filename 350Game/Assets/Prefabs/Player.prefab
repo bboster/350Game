@@ -155,6 +155,7 @@ MonoBehaviour:
   upwardForce: 0
   timeBetweenShooting: 0.1
   spread: 0
+  currentSpread: 0
   reloadTime: 1.5
   timeBetweenShots: 0
   magazineSize: 100
@@ -307,8 +308,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  gravity: -9.8
-  jumpHeight: 3
+  gravity: -10.5
+  jumpHeight: 1
 --- !u!114 &7120664096643307101
 MonoBehaviour:
   m_ObjectHideFlags: 0
