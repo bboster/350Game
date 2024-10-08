@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2899672280449596081}
   - component: {fileID: 4800226628993516382}
   - component: {fileID: 5554249959448797526}
+  - component: {fileID: 4460227387622631169}
   m_Layer: 6
   m_Name: Keypad
   m_TagString: Untagged
@@ -50,7 +51,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5743335399541171556}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -102,7 +103,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -121,3 +122,20 @@ MonoBehaviour:
   useEvents: 0
   message: Use Keypad
   door: {fileID: 0}
+  transitionScene: 
+  sceneNumber: 0
+  gameManager: {fileID: 0}
+--- !u!114 &4460227387622631169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5743335399541171556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30352389bb2b45140b76613140f4a0c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target1: {fileID: 0}
+  Self: {fileID: 5743335399541171556}

@@ -17,7 +17,9 @@ public class Target : MonoBehaviour
         }
         if (spawn)
         {
-            Self.SetActive(true);
+            Self.GetComponent<MeshRenderer>().enabled = true;
+            Self.GetComponent<BoxCollider>().enabled = true;
+
         }
     }
 }
