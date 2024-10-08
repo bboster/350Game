@@ -2078,6 +2078,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9051238300485817969, guid: 2f6c4572e07a60b43b00e1c4f489a806, type: 3}
   m_PrefabInstance: {fileID: 915706195}
   m_PrefabAsset: {fileID: 0}
+--- !u!137 &949883406 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 4802320808930338988, guid: d71ceb69e72d4b340b7337f567ecd4bd, type: 3}
+  m_PrefabInstance: {fileID: 1704531044}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &979147538
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2336,6 +2341,14 @@ PrefabInstance:
       propertyPath: Target1
       value: 
       objectReference: {fileID: 1704531045}
+    - target: {fileID: 5554249959448797526, guid: 5d091ca3d55f2f94abba7779a8358bf5, type: 3}
+      propertyPath: sceneNumber
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5554249959448797526, guid: 5d091ca3d55f2f94abba7779a8358bf5, type: 3}
+      propertyPath: transitionScene
+      value: Room0
+      objectReference: {fileID: 0}
     - target: {fileID: 5743335399541171556, guid: 5d091ca3d55f2f94abba7779a8358bf5, type: 3}
       propertyPath: m_Name
       value: Keypad
@@ -3438,6 +3451,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 484033100}
+    - target: {fileID: 3259280981155284539, guid: d71ceb69e72d4b340b7337f567ecd4bd, type: 3}
+      propertyPath: srender
+      value: 
+      objectReference: {fileID: 949883406}
     - target: {fileID: 5704769692372560256, guid: d71ceb69e72d4b340b7337f567ecd4bd, type: 3}
       propertyPath: m_Name
       value: FootmanEnemyLowPoly
