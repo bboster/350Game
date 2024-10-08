@@ -69,21 +69,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void StartGame()
-    {
-        SceneManager.LoadScene("Room0");
-    }
-
-    public void QuitGame()
-    {
-        Debug.Log("Quit game");
-        Application.Quit();
-    }
-
-    public void ReturnToMainMenu()
-    {
-        SceneManager.LoadScene("MainMenu");
-    }
 
 
 }
