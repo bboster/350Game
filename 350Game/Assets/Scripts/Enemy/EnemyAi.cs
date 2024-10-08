@@ -25,6 +25,9 @@ public class EnemyAi : MonoBehaviour
     private float attackDelay;
     private bool attackResetting;
 
+    [SerializeField]
+    private float Health;
+
     private Animator anim;
 
     // Start is called before the first frame update
@@ -39,14 +42,14 @@ public class EnemyAi : MonoBehaviour
     void Update()
     {
         trackPlayer();
-        if (!canAttack && !attackResetting)
+        /*if (!canAttack && !attackResetting)
         {
             attackResetting = true;
             Invoke("attackReset", attackDelay);
-        }
+        }*/
     }
 
-    // we want to give the enemy a push in the players direction 
+    // We want to give the enemy a push in the players direction 
     private void trackPlayer()
     {
         // turn enemy towards the player
@@ -61,13 +64,40 @@ public class EnemyAi : MonoBehaviour
             anim.SetTrigger("Attack");
             p.GetComponent<PlayerHealth>().TakeDamage(attackStrength);
             canAttack = false;
-            attackResetting = false;
+            //attackResetting = false;
         }
 
     }
 
-    void attackReset()
+    private void TakeDamage()
+    {
+        Health--;
+        if (Health <= 0)
+        {
+            anim.SetTrigger("Dead");
+        }
+    }
+
+
+    //This is called at the end of the attack animation to start another attack.
+    private void attackReset()
     {
         canAttack = true;
+    }
+
+    //Used for if a bullet collides with the enemy.
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Bullet")
+        {
+            TakeDamage();
+            Destroy(collision.gameObject);
+        }
+    }
+    
+    //This is called at the end of the deaath animation to delete the enemy.
+    private void Death()
+    {
+        Destroy(gameObject);
     }
 }

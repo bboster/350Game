@@ -9,6 +9,7 @@ TagManager:
   - GameManager
   - DoorTwo
   - DoorThree
+  - Bullet
   layers:
   - Default
   - TransparentFX
