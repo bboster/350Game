@@ -6,6 +6,10 @@ using UnityEngine;
 public class EnemyAi : MonoBehaviour
 {
     private Rigidbody rb;
+    [SerializeField]
+    private MeshRenderer render;
+    [SerializeField]
+    private SkinnedMeshRenderer srender;
 
     [SerializeField]
     private Transform player;
@@ -28,14 +32,24 @@ public class EnemyAi : MonoBehaviour
     [SerializeField]
     private float Health;
 
+    private Color normalColor;
+    private Color damageColor;
+
     private Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>(); 
+        rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
         p = GameObject.Find("Player");
+        /*if (render != null)
+        {
+            normalColor =  render.GetComponent<Color>();
+        } else {
+            normalColor = srender.GetComponent<Color>();
+        }*/
+            
     }
 
     // Update is called once per frame
@@ -72,6 +86,7 @@ public class EnemyAi : MonoBehaviour
     private void TakeDamage()
     {
         Health--;
+        
         if (Health <= 0)
         {
             anim.SetTrigger("Dead");
