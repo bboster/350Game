@@ -2494,6 +2494,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 281132436585998495, guid: 6f4ec8328374c8a4ab8a780caa353471, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 713427614208984005, guid: 6f4ec8328374c8a4ab8a780caa353471, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053103790128167980, guid: 6f4ec8328374c8a4ab8a780caa353471, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2544013793253787298, guid: 6f4ec8328374c8a4ab8a780caa353471, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3548685740126015755, guid: 6f4ec8328374c8a4ab8a780caa353471, type: 3}
       propertyPath: m_Name
       value: PlayerUI
@@ -2580,6 +2596,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5196193361100809959, guid: 6f4ec8328374c8a4ab8a780caa353471, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737982958974281166, guid: 6f4ec8328374c8a4ab8a780caa353471, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4863,6 +4883,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2900273292442254067, guid: 651e0b9cb85df2a498b77b92557878a8, type: 3}
+      propertyPath: speed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2900273292442254067, guid: 651e0b9cb85df2a498b77b92557878a8, type: 3}
+      propertyPath: jumpHeight
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4482074106405921847, guid: 651e0b9cb85df2a498b77b92557878a8, type: 3}
       propertyPath: backHealthBar
       value: 
@@ -4889,7 +4917,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6779170488164330918, guid: 651e0b9cb85df2a498b77b92557878a8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 116.59
+      value: 113.31
       objectReference: {fileID: 0}
     - target: {fileID: 6779170488164330918, guid: 651e0b9cb85df2a498b77b92557878a8, type: 3}
       propertyPath: m_LocalRotation.w

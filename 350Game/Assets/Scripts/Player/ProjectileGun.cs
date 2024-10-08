@@ -8,19 +8,33 @@ using UnityEngine;
 
 public class ProjectileGun : MonoBehaviour
 {
+    [Tooltip("The prefab spawned from the gun")]
     public GameObject bullet;
+    [Tooltip("idk")]
     public float shootForce;
+    [Tooltip("idk")]
     public float upwardForce;
+    [Tooltip("The time between when the player shoots and can shoot again.")]
     public float timeBetweenShooting;
+    [Tooltip("idk")]
     public float spread;
+    public float currentSpread;
+    [Tooltip("The time it takes to reload the gun")]
     public float reloadTime;
+    [Tooltip("The time between bullets from the same button press")]
     public float timeBetweenShots;
+    [Tooltip("How many bullets can be shot before needing to reload")]
     public int magazineSize;
+    [Tooltip("How many bullets are shot per button press")]
     public float bulletsPerTap;
+    [Tooltip("How many bullets the player currently has left")]
     int bulletsLeft;
     int bulletsRight;
+    [Tooltip("If the player is shotting or not")]
     bool shooting;
+    [Tooltip("Keeps the player from shooting again while the shot function is running")]
     bool readyToShoot;
+    [Tooltip("Stops the player from shooting while reloading")]
     bool reloading;
 
     public Camera fpsCam;
@@ -69,6 +83,7 @@ public class ProjectileGun : MonoBehaviour
         if(readyToShoot && shooting && !reloading && bulletsLeft > 0)
         {
             bulletsShot = 0;
+            currentSpread = 0;
             Shoot();
         }
     }
@@ -92,10 +107,10 @@ public class ProjectileGun : MonoBehaviour
         Vector3 directionWithoutSpread = targetPoint - attackPoint.position;
 
         // calculate spread
-        float x = UnityEngine.Random.Range(-spread, spread);
-        float y = UnityEngine.Random.Range(-spread, spread);
+        //float x = UnityEngine.Random.Range(-spread, spread);
+        //float y = UnityEngine.Random.Range(-spread, spread);
 
-        Vector3 directionWithSpread = directionWithoutSpread + new Vector3(x, y, 0);
+        Vector3 directionWithSpread = directionWithoutSpread + new Vector3(currentSpread, 0, 0);
 
         GameObject currentBullet = Instantiate(bullet, attackPoint.position, Quaternion.identity);
         currentBullet.transform.forward = directionWithSpread.normalized;
@@ -121,7 +136,16 @@ public class ProjectileGun : MonoBehaviour
         // if more than one bullets per tap, make sure to repeat shoot function
         if (bulletsShot < bulletsPerTap && bulletsLeft > 0)
         {
+            if(bulletsShot == 2)
+            {
+                currentSpread = spread;
+            } else if (bulletsShot == 1)
+            {
+                currentSpread = -spread;
+            }
             Invoke("Shoot", timeBetweenShots);
+        } else {
+            currentSpread = 0;
         }
     }
 
