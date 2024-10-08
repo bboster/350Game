@@ -3477,6 +3477,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2434009165380381007, guid: 651e0b9cb85df2a498b77b92557878a8, type: 3}
+      propertyPath: spread
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2434009165380381007, guid: 651e0b9cb85df2a498b77b92557878a8, type: 3}
+      propertyPath: shootForce
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2434009165380381007, guid: 651e0b9cb85df2a498b77b92557878a8, type: 3}
+      propertyPath: magazineSize
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 2434009165380381007, guid: 651e0b9cb85df2a498b77b92557878a8, type: 3}
+      propertyPath: bulletsPerTap
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2434009165380381007, guid: 651e0b9cb85df2a498b77b92557878a8, type: 3}
+      propertyPath: timeBetweenShots
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 4482074106405921847, guid: 651e0b9cb85df2a498b77b92557878a8, type: 3}
       propertyPath: backHealthBar
       value: 

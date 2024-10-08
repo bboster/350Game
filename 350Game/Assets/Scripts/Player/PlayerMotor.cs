@@ -6,10 +6,11 @@ public class PlayerMotor : MonoBehaviour
 {
     private CharacterController controller;
     private Vector3 playerVelocity;
-    private float speed = 5f;
+    [SerializeField]
+    private float speed;
     private bool isGrounded;
-    public float gravity = -9.8f;
-    public float jumpHeight = 3f;
+    public float gravity;
+    public float jumpHeight;
 
     // Start is called before the first frame update
     void Start()
