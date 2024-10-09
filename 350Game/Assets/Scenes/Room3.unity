@@ -4917,6 +4917,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2108236956}
     - target: {fileID: 4268067880376042436, guid: 2543a0e466a2bcf479812fc0593ac520, type: 3}
+      propertyPath: Health
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268067880376042436, guid: 2543a0e466a2bcf479812fc0593ac520, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 2108236966}
@@ -6116,6 +6120,10 @@ PrefabInstance:
       propertyPath: p
       value: 
       objectReference: {fileID: 2108236956}
+    - target: {fileID: 273406345083529002, guid: 4b667718c60edb94cabff0e71a9d2195, type: 3}
+      propertyPath: Health
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 273406345083529002, guid: 4b667718c60edb94cabff0e71a9d2195, type: 3}
       propertyPath: player
       value: 

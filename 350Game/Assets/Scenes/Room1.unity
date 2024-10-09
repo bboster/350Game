@@ -4649,7 +4649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useEvents: 0
-  message: 
+  message: Go Home
   door: {fileID: 0}
   transitionScene: Room0
   sceneNumber: 1
@@ -6082,6 +6082,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1791964128}
     - target: {fileID: 3259280981155284539, guid: d71ceb69e72d4b340b7337f567ecd4bd, type: 3}
+      propertyPath: Health
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3259280981155284539, guid: d71ceb69e72d4b340b7337f567ecd4bd, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 484033100}
@@ -6339,11 +6343,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2434009165380381007, guid: 651e0b9cb85df2a498b77b92557878a8, type: 3}
       propertyPath: spread
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2434009165380381007, guid: 651e0b9cb85df2a498b77b92557878a8, type: 3}
       propertyPath: shootForce
-      value: 10
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 2434009165380381007, guid: 651e0b9cb85df2a498b77b92557878a8, type: 3}
       propertyPath: magazineSize
@@ -6351,7 +6355,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2434009165380381007, guid: 651e0b9cb85df2a498b77b92557878a8, type: 3}
       propertyPath: bulletsPerTap
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2434009165380381007, guid: 651e0b9cb85df2a498b77b92557878a8, type: 3}
       propertyPath: timeBetweenShots

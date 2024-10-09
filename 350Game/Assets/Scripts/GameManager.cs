@@ -57,10 +57,10 @@ public class GameManager : MonoBehaviour
             Destroy(doorThree);
         }
 
-        if(triedDoorOne == true && triedDoorTwo == true && triedDoorThree == true && SceneManager.GetActiveScene().name == "Room0")
-        {
-            SceneManager.LoadScene("EndGame");
-        }
+        //if(triedDoorOne == true && triedDoorTwo == true && triedDoorThree == true && SceneManager.GetActiveScene().name == "Room0")
+        //{
+        //    SceneManager.LoadScene("EndGame");
+        //}
 
         if(SceneManager.GetActiveScene().name == "EndGame")
         {
