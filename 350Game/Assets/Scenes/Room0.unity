@@ -4191,6 +4191,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerUI
       objectReference: {fileID: 0}
+    - target: {fileID: 5096206638132562844, guid: 6f4ec8328374c8a4ab8a780caa353471, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5196193361100809959, guid: 6f4ec8328374c8a4ab8a780caa353471, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -4277,11 +4281,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5737982958974281166, guid: 6f4ec8328374c8a4ab8a780caa353471, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 594.97
+      value: 658.43
       objectReference: {fileID: 0}
     - target: {fileID: 5737982958974281166, guid: 6f4ec8328374c8a4ab8a780caa353471, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -69.961
+      value: -38.231
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
