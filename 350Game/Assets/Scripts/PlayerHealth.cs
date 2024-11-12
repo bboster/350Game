@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    private float health;
+    public float health;
     private float lerpTimer;
     public float maxHealth = 100;
     public float chipSpeed = 2;
@@ -24,7 +24,6 @@ public class PlayerHealth : MonoBehaviour
     {
         health = Mathf.Clamp(health, 0, maxHealth);
         UpdateHealthUI();
-        
     }
 
     public void UpdateHealthUI()

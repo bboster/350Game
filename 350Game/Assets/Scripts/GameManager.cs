@@ -17,6 +17,14 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject doorThree;
 
+    // Get the player health variable
+    [SerializeField]
+    private PlayerHealth PlayerHealth;
+
+    // update bools
+    [SerializeField]
+    private bool hasHealthLevel;
+
     private void Awake()
     {
         if(Instance == null)
@@ -29,8 +37,6 @@ public class GameManager : MonoBehaviour
         }
         Application.targetFrameRate = 60;
         DontDestroyOnLoad(gameObject);
-
-        
     }
     // Start is called before the first frame update
     void Start()
@@ -67,6 +73,11 @@ public class GameManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             Destroy(gameObject);
+        }
+
+        if(hasHealthLevel == true)
+        {
+            PlayerHealth.health += 20;
         }
     }
 
