@@ -8,6 +8,7 @@ using UnityEngine;
 
 public class ProjectileGun : MonoBehaviour
 {
+    //public static ProjectileGun Instance;
     [Tooltip("The prefab spawned from the gun")]
     public GameObject bullet;
     [Tooltip("idk")]
@@ -45,22 +46,46 @@ public class ProjectileGun : MonoBehaviour
     private int bulletsShot;
 
     public GameObject muzzleFlash;
-    public TextMeshProUGUI ammunitionDisplay;
+    //public TextMeshProUGUI ammunitionDisplay;
+
+    //public int bulletCount;
+    //public int maxBullets = 20;
+    //public int bulletStandard = 20;
+    public PlayerBulletController PlayerBulletController;
 
     private void Awake()
     {
+        /*if(Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        DontDestroyOnLoad(gameObject);*/
         // make sure magazine is full
         bulletsLeft = magazineSize;
         readyToShoot = true;
     }
 
+    private void Start()
+    {
+        GameObject controllerObj = GameObject.FindGameObjectWithTag("PlayerBulletController");
+        if(controllerObj != null )
+        {
+            PlayerBulletController = controllerObj.GetComponent<PlayerBulletController>();
+        }
+    }
+
     private void Update()
     {
         MyInput();
-        if(ammunitionDisplay != null)
-        {
-            ammunitionDisplay.SetText(bulletsLeft / bulletsPerTap + " / " + magazineSize / bulletsPerTap);
-        }
+        //if(ammunitionDisplay != null)
+        //{
+        // ammunitionDisplay.SetText(bulletsLeft / bulletsPerTap + " / " + magazineSize / bulletsPerTap);
+        // }
+        //PlayerBulletController = PlayerBulletController.Instance;
     }
 
     private void MyInput()
@@ -77,10 +102,11 @@ public class ProjectileGun : MonoBehaviour
         
         if(Input.GetKeyDown(KeyCode.R) && bulletsLeft < magazineSize && !reloading)
         {
+            PlayerBulletController.maxBullets = PlayerBulletController.bulletStandard;
             Reload();
         }
 
-        if(readyToShoot && shooting && !reloading && bulletsLeft > 0)
+        if(readyToShoot && shooting && !reloading && bulletsLeft > 0 && PlayerBulletController.bulletCount < PlayerBulletController.bulletStandard)
         {
             bulletsShot = 0;
             currentSpread = 0;
@@ -90,63 +116,72 @@ public class ProjectileGun : MonoBehaviour
 
     private void Shoot()
     {
-        readyToShoot = false;
-        Ray ray = fpsCam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-        RaycastHit hit;
+       
+            readyToShoot = false;
+            Ray ray = fpsCam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+            RaycastHit hit;
 
-        Vector3 targetPoint;
-        if(Physics.Raycast(ray, out hit))
-        {
-            targetPoint = hit.point;
-        }
-        else
-        {
-            targetPoint = ray.GetPoint(75);
-        }
-
-        Vector3 directionWithoutSpread = targetPoint - attackPoint.position;
-
-        // calculate spread
-        //float x = UnityEngine.Random.Range(-spread, spread);
-        //float y = UnityEngine.Random.Range(-spread, spread);
-
-        Vector3 directionWithSpread = directionWithoutSpread + new Vector3(currentSpread, 0, 0);
-
-        GameObject currentBullet = Instantiate(bullet, attackPoint.position, Quaternion.identity);
-        currentBullet.transform.forward = directionWithSpread.normalized;
-        currentBullet.GetComponent<Rigidbody>().AddForce(directionWithSpread.normalized * shootForce, ForceMode.Impulse);
-        currentBullet.GetComponent<Rigidbody>().AddForce(fpsCam.transform.up * upwardForce, ForceMode.Impulse);
-        Destroy(currentBullet, 2f);
-
-        if(muzzleFlash != null)
-        {
-            Instantiate(muzzleFlash, attackPoint.position, Quaternion.identity);    
-        }
-
-        bulletsLeft--;
-        bulletsShot++;
-
-        /// invoke reset shot function
-        if (allowInvoke)
-        {
-            Invoke("ResetShot", timeBetweenShooting);
-            allowInvoke = false;
-        }
-
-        // if more than one bullets per tap, make sure to repeat shoot function
-        if (bulletsShot < bulletsPerTap && bulletsLeft > 0)
-        {
-            if(bulletsShot == 2)
+            Vector3 targetPoint;
+            if (Physics.Raycast(ray, out hit))
             {
-                currentSpread = spread;
-            } else if (bulletsShot == 1)
-            {
-                currentSpread = -spread;
+                targetPoint = hit.point;
             }
-            Invoke("Shoot", timeBetweenShots);
-        } else {
-            currentSpread = 0;
-        }
+            else
+            {
+                targetPoint = ray.GetPoint(75);
+            }
+
+            Vector3 directionWithoutSpread = targetPoint - attackPoint.position;
+
+            // calculate spread
+            //float x = UnityEngine.Random.Range(-spread, spread);
+            //float y = UnityEngine.Random.Range(-spread, spread);
+
+            Vector3 directionWithSpread = directionWithoutSpread + new Vector3(currentSpread, 0, 0);
+            
+            
+            GameObject currentBullet = Instantiate(bullet, attackPoint.position, Quaternion.identity);
+            currentBullet.transform.forward = directionWithSpread.normalized;
+            currentBullet.GetComponent<Rigidbody>().AddForce(directionWithSpread.normalized * shootForce, ForceMode.Impulse);
+            currentBullet.GetComponent<Rigidbody>().AddForce(fpsCam.transform.up * upwardForce, ForceMode.Impulse);
+            Destroy(currentBullet, 2f);
+
+            if (muzzleFlash != null)
+            {
+                Instantiate(muzzleFlash, attackPoint.position, Quaternion.identity);
+            }
+
+            bulletsLeft--;
+            bulletsShot++;
+
+            /// invoke reset shot function
+            if (allowInvoke)
+            {
+                Invoke("ResetShot", timeBetweenShooting);
+                allowInvoke = false;
+            }
+
+            // if more than one bullets per tap, make sure to repeat shoot function
+            if (bulletsShot < bulletsPerTap && bulletsLeft > 0)
+            {
+                if (bulletsShot == 2)
+                {
+                    currentSpread = spread;
+                }
+                else if (bulletsShot == 1)
+                {
+                    currentSpread = -spread;
+                }
+                Invoke("Shoot", timeBetweenShots);
+            }
+            else
+            {
+                currentSpread = 0;
+            }
+        // increase the bullet amount
+        PlayerBulletController.bulletCount++;
+        // decrease the bullet cap
+        PlayerBulletController.maxBullets--;
     }
 
     private void ResetShot()
@@ -157,6 +192,7 @@ public class ProjectileGun : MonoBehaviour
 
     private void Reload()
     {
+        PlayerBulletController.bulletCount = 0;
         reloading = true;
         Invoke("ReloadFinished", reloadTime);
     }
