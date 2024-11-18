@@ -15,7 +15,6 @@ public class ButtonManager : MonoBehaviour
         {
             IsClicked = true;
             gameManager.NewBulletCount1();
-            Destroy(gameObject);
         }
     }
 
@@ -27,7 +26,6 @@ public class ButtonManager : MonoBehaviour
         {
             IsClicked = true;
             gameManager.NewBulletCount2();
-            Destroy(gameObject);
         }
     }
 
@@ -39,7 +37,6 @@ public class ButtonManager : MonoBehaviour
         {
             IsClicked = true;
             gameManager.NewBulletCount3();
-            Destroy(gameObject);
         }
     }
 
@@ -80,6 +77,16 @@ public class ButtonManager : MonoBehaviour
             IsClicked = true;
             gameManager.NewHealth3();
         }
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    public void ReturnToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 
 }

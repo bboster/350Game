@@ -10,6 +10,9 @@ public class NavigateMenus : MonoBehaviour
     private GameManager gameManager;
     [SerializeField] private PlayerHealth PlayerHealth;
     string scene;
+
+    [SerializeField] private GameObject HowToPlay;
+    [SerializeField] private GameObject MainMenu;
     private void Awake()
     {
         if (Instance == null)
@@ -56,4 +59,10 @@ public class NavigateMenus : MonoBehaviour
         PlayerHealth.maxHealth = PlayerHealth.maxHealth + 20;
         SceneManager.LoadScene("Room0");
     }*/
+
+    public void GoToHowToPlay()
+    {
+        HowToPlay.SetActive(true);
+        MainMenu.SetActive(false);
+    }
 }
