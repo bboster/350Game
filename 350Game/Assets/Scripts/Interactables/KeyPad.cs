@@ -27,14 +27,17 @@ public class KeyPad : Interactable
         if(sceneNumber == 1)
         {
             gameManager.triedDoorOne = true;
+            gameManager.roomAmount++;
         }
         else if(sceneNumber == 2)
         {
             gameManager.triedDoorTwo = true;
+            gameManager.roomAmount++;
         }
         else if(sceneNumber == 3)
         {
             gameManager.triedDoorThree = true;
+            gameManager.roomAmount++;
         }
     }
 

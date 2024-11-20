@@ -1,0 +1,85 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class ButtonManager : MonoBehaviour
+{
+    public bool IsClicked = false;
+   
+    public void OnButtonClick1()
+    {
+        GameManager gameManager = FindObjectOfType<GameManager>();
+
+        if(gameManager != null & IsClicked == false)
+        {
+            IsClicked = true;
+            gameManager.NewBulletCount1();
+            Destroy(gameObject);
+        }
+    }
+
+    public void OnButtonClick2()
+    {
+        GameManager gameManager = FindObjectOfType<GameManager>();
+
+        if (gameManager != null & IsClicked == false)
+        {
+            IsClicked = true;
+            gameManager.NewBulletCount2();
+            Destroy(gameObject);
+        }
+    }
+
+    public void OnButtonClick3()
+    {
+        GameManager gameManager = FindObjectOfType<GameManager>();
+
+        if (gameManager != null & IsClicked == false)
+        {
+            IsClicked = true;
+            gameManager.NewBulletCount3();
+            Destroy(gameObject);
+        }
+    }
+
+    public void NewGame()
+    {
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene("Room0");
+    }
+
+    public void OnButtonClickHealth1()
+    {
+        GameManager gameManager = FindObjectOfType<GameManager>();
+
+        if (gameManager != null & IsClicked == false)
+        {
+            IsClicked = true;
+            gameManager.NewHealth1();
+        }
+    }
+
+    public void OnButtonClickHealth2()
+    {
+        GameManager gameManager = FindObjectOfType<GameManager>();
+
+        if (gameManager != null & IsClicked == false)
+        {
+            IsClicked = true;
+            gameManager.NewHealth2();
+        }
+    }
+
+    public void OnButtonClickHealth3()
+    {
+        GameManager gameManager = FindObjectOfType<GameManager>();
+
+        if (gameManager != null & IsClicked == false)
+        {
+            IsClicked = true;
+            gameManager.NewHealth3();
+        }
+    }
+
+}

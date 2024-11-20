@@ -10,6 +10,10 @@ TagManager:
   - DoorTwo
   - DoorThree
   - Bullet
+  - LevelsUI
+  - PauseMenuUI
+  - PlayerBulletController
+  - PlayerHealthController
   layers:
   - Default
   - TransparentFX
