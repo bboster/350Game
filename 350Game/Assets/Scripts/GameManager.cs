@@ -48,6 +48,8 @@ public class GameManager : MonoBehaviour
     // HEALTH STUFF
     public PlayerHealthController playerHealthController;
 
+    [SerializeField] private TextMeshProUGUI skillPointText;
+
     private void Awake()
     {
         if(Instance == null)
@@ -93,10 +95,10 @@ public class GameManager : MonoBehaviour
         {
             playerBulletController.bulletStandard = PlayerPrefs.GetInt("BulletStandard");
         }
-        if (PlayerPrefs.HasKey("MaxHealth"))
-        {
-            playerHealthController.maxHealth = PlayerPrefs.GetFloat("MaxHealth");
-        }
+        //if (PlayerPrefs.HasKey("MaxHealth"))
+        //{
+        //    playerHealthController.maxHealth = PlayerPrefs.GetFloat("MaxHealth");
+        //}
     }
 
     // Update is called once per frame
@@ -117,6 +119,7 @@ public class GameManager : MonoBehaviour
         if(playerUI != null)
         {
             bulletCountText = playerUI.transform.Find("BulletCountText")?.GetComponent<TextMeshProUGUI>();
+            skillPointText = playerUI.transform.Find("SkillPointText")?.GetComponent<TextMeshProUGUI>();
         }
         gun = GameObject.Find("GunPlaceholder")?.GetComponentInParent<ProjectileGun>();
 
@@ -163,6 +166,7 @@ public class GameManager : MonoBehaviour
         // BULLET STUFF
         bulletCount = playerBulletController.bulletCount;
         UpdateBulletCount();
+        UpdateSkillPoints();
 
         // PAUSE MENU
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -212,12 +216,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void UpdateSkillPoints()
+    {
+        if(skillPointText != null)
+        {
+            skillPointText.text = $"Skill points: {roomAmount}";
+        }
+    }
+
     public void NewBulletCount1()
     {
-        if (roomAmount >= 1 && roomAmount != 2 && roomAmount != 3)
+        if (roomAmount == 2)
         {
             playerBulletController.maxBullets = playerBulletController.maxBullets + 10;
             playerBulletController.bulletStandard = playerBulletController.bulletStandard + 10;
+            roomAmount = 0;
         }
         PlayerPrefs.SetInt("MaxBullets", playerBulletController.maxBullets);
         PlayerPrefs.SetInt("BulletStandard", playerBulletController.bulletStandard);
@@ -225,10 +238,11 @@ public class GameManager : MonoBehaviour
 
     public void NewBulletCount2()
     {
-        if (roomAmount >= 2 && roomAmount != 3)
+        if (roomAmount == 2)
         {
             playerBulletController.maxBullets = playerBulletController.maxBullets + 10;
             playerBulletController.bulletStandard = playerBulletController.bulletStandard + 10;
+            roomAmount = 0;
         }
         PlayerPrefs.SetInt("MaxBullets", playerBulletController.maxBullets);
         PlayerPrefs.SetInt("BulletStandard", playerBulletController.bulletStandard);
@@ -236,10 +250,11 @@ public class GameManager : MonoBehaviour
 
     public void NewBulletCount3()
     {
-        if (roomAmount >= 3)
+        if (roomAmount == 2)
         {
             playerBulletController.maxBullets = playerBulletController.maxBullets + 10;
             playerBulletController.bulletStandard = playerBulletController.bulletStandard + 10;
+            roomAmount = 0;
         }
         PlayerPrefs.SetInt("MaxBullets", playerBulletController.maxBullets);
         PlayerPrefs.SetInt("BulletStandard", playerBulletController.bulletStandard);
@@ -247,27 +262,30 @@ public class GameManager : MonoBehaviour
 
     public void NewHealth1()
     {
-        if (roomAmount >= 1 && roomAmount != 2 && roomAmount != 3)
+        if (roomAmount == 2)
         {
             playerHealthController.maxHealth = playerHealthController.maxHealth + 10;
+            roomAmount = 0;
         }
         PlayerPrefs.SetFloat("MaxHealth", playerHealthController.maxHealth);
     }
 
     public void NewHealth2()
     {
-        if (roomAmount >= 2 && roomAmount != 3)
+        if (roomAmount == 2)
         {
             playerHealthController.maxHealth = playerHealthController.maxHealth + 10;
+            roomAmount = 0;
         }
         PlayerPrefs.SetFloat("MaxHealth", playerHealthController.maxHealth);
     }
 
     public void NewHealth3()
     {
-        if (roomAmount >= 3)
+        if (roomAmount == 2)
         {
             playerHealthController.maxHealth = playerHealthController.maxHealth + 10;
+            roomAmount = 0;
         }
         PlayerPrefs.SetFloat("MaxHealth", playerHealthController.maxHealth);
     }
