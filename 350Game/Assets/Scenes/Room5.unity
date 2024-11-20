@@ -1608,6 +1608,7 @@ MonoBehaviour:
   Target1: {fileID: 1807720340}
   Target2: {fileID: 1411805791}
   Target3: {fileID: 489029278}
+  Target4: {fileID: 1238904829}
   Self: {fileID: 318365868}
 --- !u!114 &318365874
 MonoBehaviour:
@@ -2933,7 +2934,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5737982958974281166, guid: 6f4ec8328374c8a4ab8a780caa353471, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 160
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5228,6 +5229,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d71ceb69e72d4b340b7337f567ecd4bd, type: 3}
+--- !u!1 &1238904829 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5704769692372560256, guid: d71ceb69e72d4b340b7337f567ecd4bd, type: 3}
+  m_PrefabInstance: {fileID: 1238904828}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1241245732
 PrefabInstance:
   m_ObjectHideFlags: 0

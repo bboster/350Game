@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
     public bool triedDoorOne;
     public bool triedDoorTwo;
     public bool triedDoorThree;
+    public bool triedDoorFour;
+    public bool triedDoorFive;
+    public bool triedDoorSix;
 
     [SerializeField]
     private GameObject doorOne;
@@ -18,6 +21,12 @@ public class GameManager : MonoBehaviour
     private GameObject doorTwo;
     [SerializeField]
     private GameObject doorThree;
+    [SerializeField]
+    private GameObject doorFour;
+    [SerializeField]
+    private GameObject doorFive;
+    [SerializeField]
+    private GameObject doorSix;
 
     // Get the player health variable
     [SerializeField]
@@ -107,8 +116,11 @@ public class GameManager : MonoBehaviour
         doorOne = GameObject.FindGameObjectWithTag("DoorOne");
         doorTwo = GameObject.FindGameObjectWithTag("DoorTwo");
         doorThree = GameObject.FindGameObjectWithTag("DoorThree");
+        doorFour = GameObject.FindGameObjectWithTag("DoorFour");
+        doorFive = GameObject.FindGameObjectWithTag("DoorFive");
+        doorSix = GameObject.FindGameObjectWithTag("DoorSix");
 
-       PauseMenuManager pauseMenuManager = FindObjectOfType<PauseMenuManager>(true);
+        PauseMenuManager pauseMenuManager = FindObjectOfType<PauseMenuManager>(true);
         if(pauseMenuManager != null)
         {
             PauseMenuUI = pauseMenuManager.gameObject;
@@ -137,6 +149,17 @@ public class GameManager : MonoBehaviour
         if(triedDoorThree == true)
         {
             Destroy(doorThree);
+        }
+        if (triedDoorFour == true)
+        {
+            Destroy(doorFour);
+        }
+        if (triedDoorFive == true)
+        {
+            Destroy(doorFive);
+        }
+        if (triedDoorSix == true) {
+            Destroy(doorSix);
         }
 
         if(SceneManager.GetActiveScene().name == "EndGame")
