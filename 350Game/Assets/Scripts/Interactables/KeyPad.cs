@@ -39,6 +39,21 @@ public class KeyPad : Interactable
             gameManager.triedDoorThree = true;
             gameManager.roomAmount++;
         }
+        else if(sceneNumber == 4)
+        {
+            gameManager.triedDoorFour = true;
+            gameManager.roomAmount++;
+        }
+        else if (sceneNumber == 5)
+        {
+            gameManager.triedDoorFive = true;
+            gameManager.roomAmount++;
+        }
+        else if (sceneNumber == 6)
+        {
+            gameManager.triedDoorSix = true;
+            gameManager.roomAmount++;
+        }
     }
 
     protected override void Interact()

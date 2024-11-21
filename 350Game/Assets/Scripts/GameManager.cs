@@ -140,30 +140,43 @@ public class GameManager : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "Room0")
         {
-            if (triedDoorOne == true)
+            if (triedDoorOne == true && !triedDoorTwo)
             {
                 Destroy(doorOne);
                 Vector3 PositionTwo = new Vector3(-98.91f, -31.84001f, 138f);
                 doorTwo.transform.position = PositionTwo;
             }
-            if (triedDoorTwo == true)
+            if (triedDoorTwo == true && !triedDoorThree)
             {
+                Destroy(doorOne);
                 Destroy(doorTwo);
+                Vector3 PositionThree = new Vector3(-206.71f, -31.84001f, 145.05f);
+                doorThree.transform.position = PositionThree;
             }
-            if (triedDoorThree == true)
+            if (triedDoorThree == true )
             {
+                Destroy(doorOne);
                 Destroy(doorThree);
+                Vector3 PositionFour = new Vector3(-206.71f, -31.84001f, 161.84f);
+                doorFour.transform.position = PositionFour;
             }
             if (triedDoorFour == true)
             {
+                Destroy(doorOne);
                 Destroy(doorFour);
+                Vector3 PositionFive = new Vector3(-187.11f, -31.84001f, 75.93001f);
+                doorFive.transform.position = PositionFive;
             }
             if (triedDoorFive == true)
             {
+                Destroy(doorOne);
                 Destroy(doorFive);
+                Vector3 PositionSix = new Vector3(-187.11f, -31.84001f, 75.93001f);
+                doorSix.transform.position = PositionSix;
             }
             if (triedDoorSix == true)
             {
+                Destroy(doorOne);
                 Destroy(doorSix);
             }
         }
