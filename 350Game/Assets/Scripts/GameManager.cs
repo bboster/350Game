@@ -93,10 +93,10 @@ public class GameManager : MonoBehaviour
         {
             playerBulletController.bulletStandard = PlayerPrefs.GetInt("BulletStandard");
         }
-        if (PlayerPrefs.HasKey("MaxHealth"))
-        {
-            playerHealthController.maxHealth = PlayerPrefs.GetFloat("MaxHealth");
-        }
+        //if (PlayerPrefs.HasKey("MaxHealth"))
+        //{
+        //    playerHealthController.maxHealth = PlayerPrefs.GetFloat("MaxHealth");
+        //}
     }
 
     // Update is called once per frame
