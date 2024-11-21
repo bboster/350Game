@@ -18,6 +18,11 @@ public class Doors : Interactable
 
     protected override void Interact()
     {
-        SceneManager.LoadScene(transitionScene);
+        if(gameManager != null)
+        {
+            Debug.Log("interacting with door" + gameObject.name);
+            gameManager.TryDoor(gameObject);
+            SceneManager.LoadScene(transitionScene);
+        }
     }
 }

@@ -1509,7 +1509,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 502495973564563936, guid: e7b9713109e9e364785fb79bc4734c13, type: 3}
       propertyPath: m_TagString
-      value: DoorThree
+      value: DoorFour
       objectReference: {fileID: 0}
     - target: {fileID: 987108281066527578, guid: e7b9713109e9e364785fb79bc4734c13, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3589,7 +3589,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 502495973564563936, guid: e7b9713109e9e364785fb79bc4734c13, type: 3}
       propertyPath: m_TagString
-      value: DoorThree
+      value: DoorSix
       objectReference: {fileID: 0}
     - target: {fileID: 987108281066527578, guid: e7b9713109e9e364785fb79bc4734c13, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6308,7 +6308,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 502495973564563936, guid: e7b9713109e9e364785fb79bc4734c13, type: 3}
       propertyPath: m_TagString
-      value: DoorThree
+      value: DoorFive
       objectReference: {fileID: 0}
     - target: {fileID: 987108281066527578, guid: e7b9713109e9e364785fb79bc4734c13, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8330,6 +8330,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 249783652552036062, guid: 3ecf3cd8701d49b44b486981af5a6dbe, type: 3}
+      propertyPath: m_Name
+      value: Plus10Health2
+      objectReference: {fileID: 0}
+    - target: {fileID: 286005671664012293, guid: 3ecf3cd8701d49b44b486981af5a6dbe, type: 3}
+      propertyPath: m_Name
+      value: Plus10Health1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1677118097574721902, guid: 3ecf3cd8701d49b44b486981af5a6dbe, type: 3}
+      propertyPath: m_Name
+      value: Plus10Bullet2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4874751685968756903, guid: 3ecf3cd8701d49b44b486981af5a6dbe, type: 3}
+      propertyPath: m_Name
+      value: Plus10Bullet3
+      objectReference: {fileID: 0}
     - target: {fileID: 5084697264745986511, guid: 3ecf3cd8701d49b44b486981af5a6dbe, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -8417,6 +8433,14 @@ PrefabInstance:
     - target: {fileID: 5839651866099626110, guid: 3ecf3cd8701d49b44b486981af5a6dbe, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7794447095797647494, guid: 3ecf3cd8701d49b44b486981af5a6dbe, type: 3}
+      propertyPath: m_Name
+      value: Plus10Bullet1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090629918061250925, guid: 3ecf3cd8701d49b44b486981af5a6dbe, type: 3}
+      propertyPath: m_Name
+      value: Plus10Health3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

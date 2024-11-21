@@ -15,18 +15,23 @@ public class GameManager : MonoBehaviour
     public bool triedDoorFive;
     public bool triedDoorSix;
 
+    //[SerializeField]
+    //private GameObject doorOne;
+    //[SerializeField] 
+    //private GameObject doorTwo;
+    //[SerializeField]
+    //private GameObject doorThree;
+    //[SerializeField]
+    //private GameObject doorFour;
+    //[SerializeField]
+    //private GameObject doorFive;
+    //[SerializeField]
+    //private GameObject doorSix;
+
     [SerializeField]
-    private GameObject doorOne;
-    [SerializeField] 
-    private GameObject doorTwo;
-    [SerializeField]
-    private GameObject doorThree;
-    [SerializeField]
-    private GameObject doorFour;
-    [SerializeField]
-    private GameObject doorFive;
-    [SerializeField]
-    private GameObject doorSix;
+    private List<GameObject> doors = new List<GameObject>();
+
+    private Dictionary<GameObject, bool> doorStates = new Dictionary<GameObject, bool>();
 
     // Get the player health variable
     [SerializeField]
@@ -58,6 +63,16 @@ public class GameManager : MonoBehaviour
     public PlayerHealthController playerHealthController;
 
     [SerializeField] private TextMeshProUGUI skillPointText;
+
+    [SerializeField] private ButtonManager buttonManager;
+    [SerializeField] private GameObject btn1;
+    [SerializeField] private GameObject btn2;
+    [SerializeField] private GameObject btn3;
+    [SerializeField] private GameObject btn4;
+    [SerializeField] private GameObject btn5;
+    [SerializeField] private GameObject btn6;
+
+    public int CurrentRoom { get; private set; } = 0;
 
     private void Awake()
     {
@@ -108,17 +123,20 @@ public class GameManager : MonoBehaviour
         //{
         //    playerHealthController.maxHealth = PlayerPrefs.GetFloat("MaxHealth");
         //}
+
+        InitializeDoors();
+        DestroyTriedDoors();
     }
 
     // Update is called once per frame
     void Update()
     {
-        doorOne = GameObject.FindGameObjectWithTag("DoorOne");
-        doorTwo = GameObject.FindGameObjectWithTag("DoorTwo");
-        doorThree = GameObject.FindGameObjectWithTag("DoorThree");
-        doorFour = GameObject.FindGameObjectWithTag("DoorFour");
-        doorFive = GameObject.FindGameObjectWithTag("DoorFive");
-        doorSix = GameObject.FindGameObjectWithTag("DoorSix");
+        //doorOne = GameObject.FindGameObjectWithTag("DoorOne");
+        //doorTwo = GameObject.FindGameObjectWithTag("DoorTwo");
+        //doorThree = GameObject.FindGameObjectWithTag("DoorThree");
+        //doorFour = GameObject.FindGameObjectWithTag("DoorFour");
+        //doorFive = GameObject.FindGameObjectWithTag("DoorFive");
+        //doorSix = GameObject.FindGameObjectWithTag("DoorSix");
 
         PauseMenuManager pauseMenuManager = FindObjectOfType<PauseMenuManager>(true);
         if(pauseMenuManager != null)
@@ -138,29 +156,31 @@ public class GameManager : MonoBehaviour
         playerBulletController = FindObjectOfType<PlayerBulletController>(true);
         playerHealthController = FindObjectOfType<PlayerHealthController>(true);
 
-        if (triedDoorOne == true)
-        {
-            Destroy(doorOne);
-        }
-        if(triedDoorTwo == true)
-        {
-            Destroy(doorTwo);
-        }
-        if(triedDoorThree == true)
-        {
-            Destroy(doorThree);
-        }
-        if (triedDoorFour == true)
-        {
-            Destroy(doorFour);
-        }
-        if (triedDoorFive == true)
-        {
-            Destroy(doorFive);
-        }
-        if (triedDoorSix == true) {
-            Destroy(doorSix);
-        }
+        buttonManager = FindObjectOfType<ButtonManager>(true);
+
+        //if (triedDoorOne == true)
+        //{
+        //    Destroy(doorOne);
+        //}
+        //if(triedDoorTwo == true)
+        //{
+        //    Destroy(doorTwo);
+        //}
+        //if(triedDoorThree == true)
+        //{
+        //    Destroy(doorThree);
+        //}
+        //if (triedDoorFour == true)
+        //{
+        //    Destroy(doorFour);
+        //}
+        //if (triedDoorFive == true)
+        //{
+        //    Destroy(doorFive);
+        //}
+        //if (triedDoorSix == true) {
+        //    Destroy(doorSix);
+        //}
 
         if(SceneManager.GetActiveScene().name == "EndGame")
         {
@@ -311,5 +331,52 @@ public class GameManager : MonoBehaviour
             roomAmount = 0;
         }
         PlayerPrefs.SetFloat("MaxHealth", playerHealthController.maxHealth);
+    }
+
+    public void AdvanceRoom()
+    {
+        CurrentRoom++;
+    }
+
+    private void InitializeDoors()
+    {
+        doors.Add(GameObject.FindGameObjectWithTag("DoorOne"));
+        doors.Add(GameObject.FindGameObjectWithTag("DoorTwo"));
+        doors.Add(GameObject.FindGameObjectWithTag("DoorThree"));
+        doors.Add(GameObject.FindGameObjectWithTag("DoorFour"));
+        doors.Add(GameObject.FindGameObjectWithTag("DoorFive"));
+        doors.Add(GameObject.FindGameObjectWithTag("DoorSix"));
+
+        foreach (var door in doors)
+        {
+            if(door != null && !doorStates.ContainsKey(door))
+            {
+                doorStates[door] = false;
+            }
+        }
+    }
+
+    public void TryDoor(GameObject door)
+    {
+        if (doorStates.ContainsKey(door))
+        {
+            doorStates[door] = true;
+            Destroy(door);
+        }
+        else
+        {
+            Debug.LogWarning("Attempted to try a door that doesn't exist in the dictionary.");
+        }
+    }
+
+    private void DestroyTriedDoors()
+    {
+        foreach (var door in doors)
+        {
+            if (door != null && doorStates[door])
+            {
+                Destroy(door);
+            }
+        }
     }
 }
