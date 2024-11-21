@@ -138,30 +138,35 @@ public class GameManager : MonoBehaviour
         playerBulletController = FindObjectOfType<PlayerBulletController>(true);
         playerHealthController = FindObjectOfType<PlayerHealthController>(true);
 
-        if (triedDoorOne == true)
+        if (SceneManager.GetActiveScene().name == "Room0")
         {
-            Destroy(doorOne);
+            if (triedDoorOne == true)
+            {
+                Destroy(doorOne);
+                Vector3 PositionTwo = new Vector3(-98.91f, -31.84001f, 138f);
+                doorTwo.transform.position = PositionTwo;
+            }
+            if (triedDoorTwo == true)
+            {
+                Destroy(doorTwo);
+            }
+            if (triedDoorThree == true)
+            {
+                Destroy(doorThree);
+            }
+            if (triedDoorFour == true)
+            {
+                Destroy(doorFour);
+            }
+            if (triedDoorFive == true)
+            {
+                Destroy(doorFive);
+            }
+            if (triedDoorSix == true)
+            {
+                Destroy(doorSix);
+            }
         }
-        if(triedDoorTwo == true)
-        {
-            Destroy(doorTwo);
-        }
-        if(triedDoorThree == true)
-        {
-            Destroy(doorThree);
-        }
-        if (triedDoorFour == true)
-        {
-            Destroy(doorFour);
-        }
-        if (triedDoorFive == true)
-        {
-            Destroy(doorFive);
-        }
-        if (triedDoorSix == true) {
-            Destroy(doorSix);
-        }
-
         if(SceneManager.GetActiveScene().name == "EndGame")
         {
             Cursor.lockState = CursorLockMode.None;
