@@ -1509,7 +1509,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 502495973564563936, guid: e7b9713109e9e364785fb79bc4734c13, type: 3}
       propertyPath: m_TagString
-      value: DoorThree
+      value: DoorFour
       objectReference: {fileID: 0}
     - target: {fileID: 987108281066527578, guid: e7b9713109e9e364785fb79bc4734c13, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3589,7 +3589,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 502495973564563936, guid: e7b9713109e9e364785fb79bc4734c13, type: 3}
       propertyPath: m_TagString
-      value: DoorThree
+      value: DoorSix
       objectReference: {fileID: 0}
     - target: {fileID: 987108281066527578, guid: e7b9713109e9e364785fb79bc4734c13, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6308,7 +6308,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 502495973564563936, guid: e7b9713109e9e364785fb79bc4734c13, type: 3}
       propertyPath: m_TagString
-      value: DoorThree
+      value: DoorFive
       objectReference: {fileID: 0}
     - target: {fileID: 987108281066527578, guid: e7b9713109e9e364785fb79bc4734c13, type: 3}
       propertyPath: m_LocalPosition.x
