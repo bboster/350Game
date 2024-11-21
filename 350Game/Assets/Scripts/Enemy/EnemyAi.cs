@@ -35,13 +35,13 @@ public class EnemyAi : MonoBehaviour
     private Color normalColor;
     private Color damageColor;
 
-    private Animator anim;
+    public Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        anim = GetComponent<Animator>();
+        if (anim == null) anim = GetComponent<Animator>();
         p = GameObject.Find("Player");
         /*if (render != null)
         {
@@ -73,7 +73,10 @@ public class EnemyAi : MonoBehaviour
 
         if (Vector3.Distance(transform.position, playerPosition) >= minDistance)
         {
-            transform.position += transform.forward * speed * Time.deltaTime;
+         
+            //rb.AddForce(transform.forward * speed);
+            var direction = (player.position - transform.position) * speed;
+            rb.velocity = new Vector3(direction.x, rb.velocity.y, direction.z);
         } else if (canAttack) {
             anim.SetTrigger("Attack");
             p.GetComponent<PlayerHealth>().TakeDamage(attackStrength);

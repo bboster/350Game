@@ -324,6 +324,7 @@ GameObject:
   - component: {fileID: 6327658118544719816}
   - component: {fileID: 168168709576099652}
   - component: {fileID: 7739291443112668079}
+  - component: {fileID: 4695234645378875402}
   - component: {fileID: 1035025678483348254}
   - component: {fileID: 4268067880376042436}
   m_Layer: 0
@@ -348,7 +349,7 @@ Transform:
   - {fileID: 1718176113157801369}
   - {fileID: 1985346481016189793}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &168168709576099652
 Animator:
@@ -388,12 +389,33 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0.45685196, z: 0}
+--- !u!65 &4695234645378875402
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049387163379094850}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 0.8845253, z: 1.2326202}
+  m_Center: {x: 0, y: 0.4792862, z: -0.11631012}
 --- !u!54 &1035025678483348254
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -402,8 +424,8 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2049387163379094850}
   serializedVersion: 4
-  m_Mass: 5
-  m_Drag: 0
+  m_Mass: 12
+  m_Drag: 1
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -419,7 +441,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 0
   m_CollisionDetection: 1
 --- !u!114 &4268067880376042436
 MonoBehaviour:
@@ -433,9 +455,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2b36861de291ec43831bf47a39aefda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  render: {fileID: 0}
+  srender: {fileID: 0}
   player: {fileID: 0}
   p: {fileID: 0}
-  speed: 1
+  speed: 0.1
   minDistance: 5
   canAttack: 1
   attackStrength: 20

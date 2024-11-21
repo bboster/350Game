@@ -568,6 +568,7 @@ GameObject:
   - component: {fileID: 7293113546395523797}
   - component: {fileID: 5092831058011121995}
   - component: {fileID: 9175922476540457887}
+  - component: {fileID: 2381915191846195410}
   - component: {fileID: 2778694350584250377}
   - component: {fileID: 7890827421497521183}
   m_Layer: 0
@@ -595,7 +596,7 @@ Transform:
   - {fileID: 2718681200703915408}
   - {fileID: 6296491866795784137}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &5092831058011121995
 Animator:
@@ -610,7 +611,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 69ce5dd747afb75488c00ed0f554f1d6, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -635,12 +636,33 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Height: 1.5704899
   m_Direction: 1
   m_Center: {x: 0, y: 0.7420969, z: 0}
+--- !u!65 &2381915191846195410
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3806029535580837102}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.7097201, y: 1.464938, z: 0.7666046}
+  m_Center: {x: -0.007856823, y: 0.78991985, z: -0.008940125}
 --- !u!54 &2778694350584250377
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -649,8 +671,8 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3806029535580837102}
   serializedVersion: 4
-  m_Mass: 5
-  m_Drag: 0
+  m_Mass: 8
+  m_Drag: 1
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -666,7 +688,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 0
   m_CollisionDetection: 1
 --- !u!114 &7890827421497521183
 MonoBehaviour:
@@ -684,12 +706,12 @@ MonoBehaviour:
   srender: {fileID: 0}
   player: {fileID: 0}
   p: {fileID: 0}
-  speed: 3
-  minDistance: 2
+  speed: 1
+  minDistance: 4
   canAttack: 1
   attackStrength: 10
   attackDelay: 3
-  Health: 3
+  Health: 20
 --- !u!1 &4536168272268875243
 GameObject:
   m_ObjectHideFlags: 0
