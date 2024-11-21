@@ -211,15 +211,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 281132436585998495, guid: 6f4ec8328374c8a4ab8a780caa353471, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 454.625
+      value: 6.999939
       objectReference: {fileID: 0}
     - target: {fileID: 1053103790128167980, guid: 6f4ec8328374c8a4ab8a780caa353471, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 465.625
+      value: 17.999939
       objectReference: {fileID: 0}
     - target: {fileID: 2544013793253787298, guid: 6f4ec8328374c8a4ab8a780caa353471, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 465.625
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 3548685740126015755, guid: 6f4ec8328374c8a4ab8a780caa353471, type: 3}
       propertyPath: m_Name
@@ -4770,6 +4770,7 @@ MonoBehaviour:
   Target1: {fileID: 1704531045}
   Target2: {fileID: 0}
   Target3: {fileID: 0}
+  Target4: {fileID: 0}
   Self: {fileID: 1455606855}
 --- !u!65 &1455606858
 BoxCollider:
