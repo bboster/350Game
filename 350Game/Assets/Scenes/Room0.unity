@@ -2060,6 +2060,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 568653527279986074, guid: c65426a375c90574a95eaaf4840e9481, type: 3}
   m_PrefabInstance: {fileID: 2004650946}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &637654854 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7567635092701542346, guid: e7b9713109e9e364785fb79bc4734c13, type: 3}
+  m_PrefabInstance: {fileID: 968860719}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &641351332 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7321029070664364311, guid: 44b00c7db33473946ad48053b41e081f, type: 3}
@@ -4788,7 +4793,9 @@ MonoBehaviour:
   Target1: {fileID: 1709173281}
   Target2: {fileID: 465829048}
   Target3: {fileID: 744016070}
-  Target4: {fileID: 0}
+  Target4: {fileID: 1788507094}
+  Target5: {fileID: 1811274729}
+  Target6: {fileID: 637654854}
   Self: {fileID: 1256917400}
 --- !u!65 &1149032753
 BoxCollider:
@@ -6750,6 +6757,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6603488554207994483, guid: 98f5378049f9b5745a77677f581b32b1, type: 3}
   m_PrefabInstance: {fileID: 1784223758}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1788507094 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7567635092701542346, guid: e7b9713109e9e364785fb79bc4734c13, type: 3}
+  m_PrefabInstance: {fileID: 539960991}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1794941769
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6898,6 +6910,11 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1811274729 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7567635092701542346, guid: e7b9713109e9e364785fb79bc4734c13, type: 3}
+  m_PrefabInstance: {fileID: 1706227770}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1831315349
 PrefabInstance:
   m_ObjectHideFlags: 0

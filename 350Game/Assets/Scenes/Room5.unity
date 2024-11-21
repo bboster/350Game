@@ -1609,6 +1609,8 @@ MonoBehaviour:
   Target2: {fileID: 1411805791}
   Target3: {fileID: 489029278}
   Target4: {fileID: 1238904829}
+  Target5: {fileID: 0}
+  Target6: {fileID: 0}
   Self: {fileID: 318365868}
 --- !u!114 &318365874
 MonoBehaviour:
@@ -1626,7 +1628,7 @@ MonoBehaviour:
   message: Go Home
   door: {fileID: 0}
   transitionScene: Room0
-  sceneNumber: 3
+  sceneNumber: 5
   gameManager: {fileID: 0}
 --- !u!1001 &340541859
 PrefabInstance:
@@ -5769,18 +5771,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2900273292442254067, guid: 651e0b9cb85df2a498b77b92557878a8, type: 3}
-      propertyPath: speed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2900273292442254067, guid: 651e0b9cb85df2a498b77b92557878a8, type: 3}
-      propertyPath: gravity
-      value: -19.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2900273292442254067, guid: 651e0b9cb85df2a498b77b92557878a8, type: 3}
-      propertyPath: jumpHeight
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4482074106405921847, guid: 651e0b9cb85df2a498b77b92557878a8, type: 3}
       propertyPath: backHealthBar
       value: 
