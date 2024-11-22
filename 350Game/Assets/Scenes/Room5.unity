@@ -2214,6 +2214,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2108236956}
     - target: {fileID: 3259280981155284539, guid: d71ceb69e72d4b340b7337f567ecd4bd, type: 3}
+      propertyPath: Health
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3259280981155284539, guid: d71ceb69e72d4b340b7337f567ecd4bd, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 2108236966}
@@ -5319,6 +5323,10 @@ PrefabInstance:
       propertyPath: p
       value: 
       objectReference: {fileID: 2108236956}
+    - target: {fileID: 3259280981155284539, guid: d71ceb69e72d4b340b7337f567ecd4bd, type: 3}
+      propertyPath: Health
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 3259280981155284539, guid: d71ceb69e72d4b340b7337f567ecd4bd, type: 3}
       propertyPath: player
       value: 
