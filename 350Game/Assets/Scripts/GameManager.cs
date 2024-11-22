@@ -133,7 +133,7 @@ public class GameManager : MonoBehaviour
             bulletCountText = playerUI.transform.Find("BulletCountText")?.GetComponent<TextMeshProUGUI>();
             skillPointText = playerUI.transform.Find("SkillPointText")?.GetComponent<TextMeshProUGUI>();
         }
-        gun = GameObject.Find("GunPlaceholder")?.GetComponentInParent<ProjectileGun>();
+        gun = GameObject.Find("rifle_1")?.GetComponentInParent<ProjectileGun>();
 
         playerBulletController = FindObjectOfType<PlayerBulletController>(true);
         playerHealthController = FindObjectOfType<PlayerHealthController>(true);
@@ -153,23 +153,29 @@ public class GameManager : MonoBehaviour
                 Vector3 PositionThree = new Vector3(-206.71f, -31.84001f, 145.05f);
                 doorThree.transform.position = PositionThree;
             }
-            if (triedDoorThree == true )
+            if (triedDoorThree == true && !triedDoorFour)
             {
                 Destroy(doorOne);
+                Destroy(doorTwo);
                 Destroy(doorThree);
                 Vector3 PositionFour = new Vector3(-206.71f, -31.84001f, 161.84f);
                 doorFour.transform.position = PositionFour;
             }
-            if (triedDoorFour == true)
+            if (triedDoorFour == true && !triedDoorFive)
             {
                 Destroy(doorOne);
+                Destroy(doorTwo);
+                Destroy(doorThree);
                 Destroy(doorFour);
                 Vector3 PositionFive = new Vector3(-187.11f, -31.84001f, 75.93001f);
                 doorFive.transform.position = PositionFive;
             }
-            if (triedDoorFive == true)
+            if (triedDoorFive == true && !triedDoorSix)
             {
                 Destroy(doorOne);
+                Destroy(doorTwo);
+                Destroy(doorThree);
+                Destroy(doorFour);
                 Destroy(doorFive);
                 Vector3 PositionSix = new Vector3(-187.11f, -31.84001f, 75.93001f);
                 doorSix.transform.position = PositionSix;
@@ -177,6 +183,10 @@ public class GameManager : MonoBehaviour
             if (triedDoorSix == true)
             {
                 Destroy(doorOne);
+                Destroy(doorTwo);
+                Destroy(doorThree);
+                Destroy(doorFour);
+                Destroy(doorFive);
                 Destroy(doorSix);
             }
         }
