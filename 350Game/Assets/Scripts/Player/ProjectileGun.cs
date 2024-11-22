@@ -100,7 +100,7 @@ public class ProjectileGun : MonoBehaviour
             shooting = Input.GetKeyDown(KeyCode.Mouse0);
         }
         
-        if(Input.GetKeyDown(KeyCode.R) && bulletsLeft < magazineSize && !reloading)
+        if(Input.GetKeyDown(KeyCode.R) && bulletsLeft < 100 && !reloading)
         {
             PlayerBulletController.maxBullets = PlayerBulletController.bulletStandard;
             Reload();

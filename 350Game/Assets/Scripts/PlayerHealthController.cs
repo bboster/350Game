@@ -20,4 +20,10 @@ public class PlayerHealthController : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
     }
+
+    public void ResetHealth()
+    {
+        maxHealth = 100;
+        health = 100;
+    }
 }

@@ -180,11 +180,10 @@ public class GameManager : MonoBehaviour
                 Destroy(doorSix);
             }
         }
-        if(SceneManager.GetActiveScene().name == "EndGame")
+        if(SceneManager.GetActiveScene().name == "YouDiedMenu")
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-            Destroy(gameObject);
         }
 
         if(hasHealthLevel == true)
@@ -192,22 +191,28 @@ public class GameManager : MonoBehaviour
             playerHealth += 20;
         }
 
+        if(playerHealthController.health <= 0)
+        {
+            SceneManager.LoadScene("YouDiedMenu");
+            playerHealthController.health = 20;
+        }
+
         // check for current scene;
         scene = SceneManager.GetActiveScene().name;
 
         //DisplayPickLevelUp();
-
-        if(SceneManager.GetActiveScene().name == "LevelUpSelect")
-        {
-            Cursor.lockState= CursorLockMode.None;
-            Cursor.visible = true;
-        }
 
 
         // BULLET STUFF
         bulletCount = playerBulletController.bulletCount;
         UpdateBulletCount();
         UpdateSkillPoints();
+
+
+        if(bulletCount <= 1)
+        {
+            bulletCount = 1;
+        }
 
         // PAUSE MENU
         if (Input.GetKeyDown(KeyCode.Escape))

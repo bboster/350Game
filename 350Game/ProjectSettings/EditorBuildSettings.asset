@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EndGame.unity
     guid: 564fded324b9afe4c815e9c38374af9e
+  - enabled: 1
+    path: Assets/Scenes/YouDiedMenu.unity
+    guid: 26bd2712a75c0fb41a7f5e5309fd21b6
   m_configObjects: {}

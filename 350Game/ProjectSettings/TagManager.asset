@@ -17,6 +17,7 @@ TagManager:
   - DoorFour
   - DoorFive
   - DoorSix
+  - StartButton
   layers:
   - Default
   - TransparentFX

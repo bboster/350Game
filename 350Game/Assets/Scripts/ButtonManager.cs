@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Properties;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -42,8 +43,19 @@ public class ButtonManager : MonoBehaviour
 
     public void NewGame()
     {
+        //PlayerPrefs.DeleteAll();
+        //SceneManager.LoadScene("Room0");
+        PlayerHealthController playerHealth = FindObjectOfType<PlayerHealthController>();
+        PlayerBulletController playerBullet = FindObjectOfType<PlayerBulletController>();
+        GameManager gameManager = FindObjectOfType<GameManager>();
+
+        playerHealth.ResetHealth();
+        playerBullet.ResetBullets();
+        gameManager.roomAmount = 0;
         PlayerPrefs.DeleteAll();
+
         SceneManager.LoadScene("Room0");
+        
     }
 
     public void OnButtonClickHealth1()
@@ -87,6 +99,11 @@ public class ButtonManager : MonoBehaviour
     public void ReturnToMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene("Room0");
     }
 
 }
